@@ -1,0 +1,67 @@
+.find-resume-container{
+  
+h4{
+    margin-top: 20px;
+    color: black;
+}
+
+    .section-search    {
+        padding-top: 16px;
+        padding-bottom: 15px;
+        color:black;
+     border-bottom:1px solid black;
+        
+    }
+
+    .section-details {
+        margin-top:25px;
+        .section-label{
+            margin-top:31px;
+            color: black;
+            
+       }
+       .section-input-blackdropdowns{
+        select{
+        
+            width: 70%;
+    background: transparent;   
+  
+     border-top:white;
+     border-left: white;
+     border-right:white;
+        
+      
+    }
+}
+   
+ 
+    .section-input-bluedropdowns{
+        select{
+            color: rgb(37, 184, 205);
+            width: 70%;
+    background: transparent;   
+     border-bottom: 1px solid rgb(37, 184, 205);
+     border-top:white;
+     border-left: white;
+     border-right:white;
+        
+      
+    }
+}
+}
+    
+.heading{
+    font-weight: bold;
+}
+.secondary-details-section{
+    margin-top: 120px;
+}
+.section-button{
+    border:none;
+    background-color: white;
+    vertical-align: left;
+  }
+}
+
+
+  

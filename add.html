@@ -1,0 +1,433 @@
+<div class='find-resume-container'>
+  <div class='section-search row'>
+    <div class='col-md-8'>
+      <span>Search for the Best Candidate Profiles</span>
+    </div>
+    <div class='btn-toolbar search-buttons'>
+      <button type="button" class='btn btn-primary btn-sm'>Search</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <button type="button" class='btn btn-default btn-sm'>refresh</button>
+    </div>
+  </div>
+
+  <!-- three col structure starts -->
+  <h4>PRIMARY DETAILS</h4>
+  <div class='row skills-section'>
+    <div class='col-md-3'>
+      <div class='section-details'>
+        <div class='section-label heading '>
+          Job Requisition ID
+        </div>
+      </div>
+    </div>
+
+    <div class='col-md-3'>
+      <div class='section-details'>
+
+        <div class='section-input job-id'>
+          <input type='text' placeholder='Job title you are hiring for'>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- three col structure starts -->
+
+  <div class='row skills-section'>
+    <div class='col-md-3'>
+      <div class='section-details'>
+        <div class='section-label heading'>
+          Skills
+        </div>
+        <div class='section-input-blackdropdowns'>
+          <select>
+            <option value=''>Choose Weightage</option>
+            <option *ngFor='let weight of Weightages' [value]='weight'>
+              {{weight}}
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class='col-md-3'>
+      <div class='section-details'>
+        <div class='section-label'>
+          Hard Skills
+        </div>
+        <div class='section-input'>
+        </div>
+      </div>
+    </div>
+    <div class='col-md-3'>
+      <div class='section-details'>
+        <div class='section-label'>
+        </div>
+        <div class='section-input '>
+          <input type='text' placeholder='Type your skills' />
+          <button class="section-button" onClick="newHardSkillElement()"><img src="assets/images/addanother.png" style="height:20px;width:20px"> Add Another</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ <div class='row skills-section'>
+    <div class='col-md-3'>
+      <div class='section-details'>
+        <div class='section-label'>
+        </div>
+        <div class='section-input'>
+        </div>
+      </div>
+    </div>
+    <div class='col-md-3'>
+      <div class='section-details'>
+        <div class='section-label'>
+          Soft Skills
+        </div>
+        <div class='section-input'>
+        </div>
+      </div>
+    </div>
+    <div class='col-md-3'>
+      <div class='section-details'>
+        <div class='section-label'>
+          <input type='text' placeholder='Type your skills' />
+          <button class="section-button" onClick="newSoftSkillElement()"><img src="assets/images/addanother.png" style="height:20px;width:20px"> Add Another</button>
+        </div>
+        <div class='section-input'>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class='row industry-section'>
+    <div class='col-md-3'>
+      <div class='section-details'>
+        <div class='section-label heading'>
+          Industry
+        </div>
+        <div class='section-input-blackdropdowns'>
+          <select>
+            <option value=''>Choose Weightage</option>
+            <option *ngFor='let weight of Weightages' [value]='weight'>
+              {{weight}}
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class='col-md-3'>
+      <div class='section-details'>
+        <div class='section-label '>
+          Industry type
+        </div>
+        <div class='section-input-bluedropdowns'>
+          <select>
+            <option value=''>Select </option>
+            <option *ngFor='let weight of Weightages' [value]='weight'>
+              {{weight}}
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class='col-md-3'>
+      <div class='section-details'>
+        <div class='section-label'>
+          Sub type
+        </div>
+        <div class='section-input-bluedropdowns'>
+          <select>
+            <option value=''>Select</option>
+            <option *ngFor='let weight of Weightages' [value]='weight'>
+              {{weight}}
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class='row candidatedetails-section'>
+    <div class='col-md-3'>
+      <div class='section-details'>
+        <div class='section-label heading'>
+          Candidate Details
+        </div>
+        <div class='section-input-blackdropdowns'>
+          <select>
+            <option value=''>Choose Weightage</option>
+            <option *ngFor='let weight of Weightages' [value]='weight'>
+              {{weight}}
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class='col-md-3'>
+      <div class='section-details'>
+        <div class='section-label'>
+          Qualification
+        </div>
+        <div class='section-input-bluedropdowns'>
+          <select>
+            <option value=''>Select</option>
+            <option *ngFor='let weight of Weightages' [value]='weight'>
+              {{weight}}
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class='col-md-3'>
+      <div class='section-details'>
+        <div class='section-label'>
+          Last experience in Medical
+        </div>
+        <div class='section-input-bluedropdowns'>
+          <select>
+            <option value=''>Select</option>
+            <option *ngFor='let weight of Weightages' [value]='weight'>
+              {{weight}}
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class='row languages-section'>
+    <div class='col-md-3'>
+      <div class='section-details'>
+        <div class='section-label heading'>
+          Language Known
+        </div>
+        <div class='section-input-blackdropdowns'>
+          <select>
+            <option value=''>Choose Weightage</option>
+            <option *ngFor='let weight of Weightages' [value]='weight'>
+              {{weight}}
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class='col-md-3'>
+      <div class='section-details'>
+        <div class='section-label'>
+          Language known
+        </div>
+        <div class='section-input-bluedropdowns'>
+          <select>
+            <option value=''>Select</option>
+            <option *ngFor='let weight of Weightages' [value]='weight'>
+              {{weight}}
+            </option>
+          </select>
+        </div>
+        <button class="section-button" onClick="newHardSkillElement()"><img src="assets/images/addanother.png" style="height:20px;width:20px"> Add Another</button>
+      </div>
+    </div>
+    <div class='col-md-3'>
+      <div class='section-details'>
+        <div class='section-label'>
+        </div>
+        <div class='section-input'>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class='row Educational-section'>
+    <div class='col-md-3'>
+      <div class='section-details'>
+        <div class='section-label heading'>
+          Education & Organizational details
+        </div>
+        <div class='section-input-blackdropdowns'>
+          <select>
+            <option value=''>Choose Weightage</option>
+            <option *ngFor='let weight of Weightages' [value]='weight'>
+              {{weight}}
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class='col-md-3'>
+      <div class='section-details'>
+        <div class='section-label'>
+          Top Academic Institutions
+        </div>
+        <div class='section-input-bluedropdowns'>
+          <select>
+            <option value=''>Select</option>
+            <option *ngFor='let weight of Weightages' [value]='weight'>
+              {{weight}}
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class='col-md-3'>
+      <div class='section-details'>
+        <div class='section-label'>
+          Associated with Top Organizations
+        </div>
+        <div class='section-input-bluedropdowns '>
+          <select>
+            <option value=''>Select</option>
+            <option *ngFor='let weight of Weightages' [value]='weight'>
+              {{weight}}
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- secondary Details Section -->
+  <div class='secondary-details-section'>
+    <h4>SECONDARY DETAILS</h4>
+    <div class='row profile-section'>
+      <div class='col-md-3'>
+        <div class='section-details'>
+          <div class='section-label heading'>
+            Number Of Profiles Required
+          </div>
+          <div class='section-input'>
+          </div>
+        </div>
+      </div>
+      <div class='col-md-3'>
+        <div class='section-details'>
+          <div class='section-label'>
+          </div>
+          <div class='section-input'>
+            <input type='text' placeholder='Type here' />
+          </div>
+        </div>
+      </div>
+      <div class='col-md-3'>
+        <div class='section-details'>
+          <div class='section-label'>
+          </div>
+          <div class='section-input'>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class='row profile-section'>
+      <div class='col-md-3'>
+        <div class='section-details'>
+          <div class='section-label heading'>
+            Employment Type
+          </div>
+          <div class='section-input-blackdropdowns'>
+            <select>
+              <option value=''>Choose Weightage</option>
+              <option *ngFor='let weight of Weightages' [value]='weight'>
+                {{weight}}
+              </option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class='col-md-3'>
+        <div class='section-details'>
+          <div class='section-label'>
+          </div>
+          <div class='section-input'>
+            <input type='text' placeholder='Type here'>
+          </div>
+        </div>
+      </div>
+      <div class='col-md-3'>
+        <div class='section-details'>
+          <div class='section-label'>
+          </div>
+          <div class='section-input'>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class='row location-section'>
+      <div class='col-md-3'>
+        <div class='section-details'>
+          <div class='section-label heading'>
+            Primary Locations
+          </div>
+          <div class='section-input-blackdropdowns'>
+            <select>
+              <option value=''>Choose Weightage</option>
+              <option *ngFor='let weight of Weightages' [value]='weight'>
+                {{weight}}
+              </option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class='col-md-3'>
+        <div class='section-details'>
+          <div class='section-label'>
+          </div>
+          <div class='section-input-bluedropdowns'>
+            <select>
+              <option value=''>Select</option>
+              <option *ngFor='let weight of Weightages' [value]='weight'>
+                {{weight}}
+              </option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class='col-md-3'>
+        <div class='section-details'>
+          <div class='section-label'>
+          </div>
+          <div class='section-input-bluedropdowns'>
+            <select>
+              <option value=''>Select</option>
+              <option *ngFor='let weight of Weightages' [value]='weight'>
+                {{weight}}
+              </option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class='row jobpriority-section'>
+      <div class='col-md-3'>
+        <div class='section-details'>
+          <div class='section-label heading'>
+            Priority Of the Job
+          </div>
+          <div class='section-input-blackdropdowns'>
+            <select>
+              <option value=''>Choose Weightage</option>
+              <option *ngFor='let weight of Weightages' [value]='weight'>
+                {{weight}}
+              </option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class='col-md-3'>
+        <div class='section-details'>
+          <div class='section-label'>
+          </div>
+          <div class='section-input-bluedropdowns'>
+            <select>
+              <option value=''>Select</option>
+              <option *ngFor='let weight of Weightages' [value]='weight'>
+                {{weight}}
+              </option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
