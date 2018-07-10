@@ -1,0 +1,24 @@
+<div>
+    <table class="col-sm-12">
+        <tr *ngFor="let con of skills" style="margin-bottom: 10px;">
+            <td>
+              {{con.skill}}
+            </td> 
+            <td>
+              <button (click)="removeSkill(con)"><span style="color: lightcyan">x</span></button>
+            </td>      
+            <table class="col-sm-12">      
+              <tr *ngFor="let entry of con.entries; let idx = index"class="col-sm-3">
+                  <td>{{ entry.description }}</td>
+                  <td><input type="radio" name="radiogroup{{entry.value}}" (change)="onSelectionChange(entry)" [checked]="(idx === 0)" [value]="entry.id"></td>  
+              </tr>
+            </table>
+        </tr>
+    </table>
+    <form name="myForm">
+      <input #newSkill placeholder="Type your skills" required/>
+      <button ng-disabled="myForm.$invalid" (click)="addSkill(newSkill.value)" class="section-button"><img src="assets/images/addanother.png" style="height:20px;width:20px">Add Another</button>
+    </form>
+    <form>
+    </form>
+</div>
