@@ -1,0 +1,79 @@
+@import '../../app.component';
+
+.atienne-logo {
+  color: var(--charcoal-grey);
+  font-family: ProximaNova;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  line-height: 1;
+  text-align: right;
+
+  &:hover {
+    text-decoration: none;
+
+  }
+}
+
+.header-area {
+  @include trans-duration(500ms);
+  background-color: $white-color;
+  display: block;
+  padding: 16px;
+  z-index: 1;
+  @media #{$breakpoint-xs} {
+    @include trans-duration(500ms);
+    display: block;
+    height: 100%;
+    left: -350px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    position: fixed;
+    top: 0;
+    z-index: 4000;
+  }
+
+  &.bp-xs-on {
+    left: 0;
+  }
+
+  .nav-close {
+    @include trans-duration(500ms);
+    background-color: $bg-default;
+    color: $white-color;
+    cursor: pointer;
+    display: none;
+    font-size: 12px;
+    height: 40px;
+    line-height: 40px;
+    position: absolute;
+    right: 15px;
+    text-align: center;
+    top: 0;
+    width: 40px;
+
+    @media #{$breakpoint-xs} {
+      display: block;
+    }
+
+    &:hover {
+      background-color: $dark-color;
+      text-decoration: none;
+    }
+  }
+
+  .logo {
+    display: inline-block;
+    width: 30%;
+  }
+
+  .header-tray-icons {
+    text-align: right;
+    width: 70%;
+
+    span {
+      cursor: pointer;
+      padding: 0 15px;
+    }
+  }
+}

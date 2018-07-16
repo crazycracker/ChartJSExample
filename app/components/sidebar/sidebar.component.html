@@ -1,0 +1,19 @@
+<!-- Header Area Start -->
+<div class='sidebar-area clearfix' [ngClass]="isCandidateProfile ? 'candidate-profile' : 'hr-profile'">
+  <!-- Close Icon -->
+  <div class='nav-close'>
+      <i class='fa fa-close' aria-hidden='true'></i>
+  </div>
+  <!-- Irene Nav -->
+  <nav class='irene-nav'>
+      <ul>
+          <li *ngFor='let link of NavItems; let i = index' (click)='setClickedRow(i)' [class.active]='i == selectedItem' [routerLink]='link.navigateTo'>
+            <a><img src='{{ link.imageUrl }}' alt='{{link.linkText}}' />
+              {{ link.linkText }}</a>
+          </li>
+      </ul>
+  </nav>
+  <div class='callout-box' *ngIf='isCandidateProfile'>Meet the people of Atienne</div>
+  <div class='need-help-link' *ngIf='isCandidateProfile'>Need Help?</div>
+</div>
+<!-- Header Area End -->

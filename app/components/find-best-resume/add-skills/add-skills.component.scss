@@ -1,0 +1,37 @@
+@import '../../../app.component';
+.section-button {
+  border: none;
+  background-color: white;
+  display: block;
+}
+
+.description {
+  color: $text-color;
+  margin-top: 8px;
+}
+
+.radio {
+  width: 33px;
+  color: $text-color;
+}
+
+.cross {
+  border: none;
+  background-color: white;
+  color: $text-color;
+  font-weight: bold;
+}
+
+img {
+  height: 20px;
+  width: 20px;
+}
+
+.add-button-text {
+  color: $text-color;
+  font-weight: bold;
+}
+
+.button-margin {
+  margin-top: 5px;
+}

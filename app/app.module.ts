@@ -1,14 +1,30 @@
-import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from "@angular/forms";
-import { AppComponent }   from './app.component';
-import { FindBestResumeComponent } from './find-best-resume/find-best-resume.component';
-import { DynamicContentsComponent } from './dynamic-contents/dynamic-contents.component';
+import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
+
+import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-router.module';
+import { ComponentsModule } from './components/components.module';
+import { ServicesModule } from './services/services.module';
+import { PagesModule } from './pages/pages.module';
 
 @NgModule({
-  imports:      [ BrowserModule ,FormsModule],
-  declarations: [ AppComponent, FindBestResumeComponent, DynamicContentsComponent],
-  bootstrap:    [ AppComponent ,FindBestResumeComponent, DynamicContentsComponent],
+  declarations: [
+    AppComponent,
+  ],
+  imports: [
+    AppRoutingModule,
+    BrowserModule,
+    ComponentsModule,
+    PagesModule,
+    ServicesModule,
+    RouterModule,
+    HttpModule,
+    HttpClientModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
 })
-
 export class AppModule { }

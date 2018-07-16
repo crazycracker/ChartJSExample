@@ -1,0 +1,48 @@
+@import '../styles.scss';
+
+.irene-app {
+  height: 100%;
+  width: 100%;
+
+  &.hr-profile {
+    background-color: $light-teal;
+  }
+
+  &.candidate-profile {
+    background-image: radial-gradient(
+      circle at bottom right,
+      $bg-default,
+      $bg-black 50%
+    );
+  }
+
+  .sidebar-wrapper {
+    background-color: $bg-blue;
+    float: left;
+    height: 100%;
+    overflow: auto;
+    vertical-align: top;
+    width: 18%;
+  }
+
+  app-sidebar {
+    width: 100%;
+  }
+
+  .main-header-container-wrapper {
+    float: left;
+    width: 82%;
+  }
+
+  .main-header-wrapper {
+    box-shadow: 0 3px 5px 0 rgba(62, 62, 63, 0.1);
+    width: 100%;
+  }
+
+  .main-container-wrapper {
+    color: $white-color;
+    height: calc(100vh - 63px);
+    overflow: auto;
+    padding: 20px;
+  }
+}

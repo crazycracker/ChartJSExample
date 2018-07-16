@@ -1,0 +1,66 @@
+@import '../../../app.component';
+.find-resume-container {
+  h4 {
+    color: $dark-color;
+    margin-top: 20px;
+  }
+  .section-search {
+    color: $dark-color;
+    padding-bottom: 15px;
+    padding-top: 10px;
+    button {
+      background-color: $bg-teal;
+      border-color: $bg-teal;
+      border-radius: 15px;
+      float: right;
+      font-size: 15px;
+      padding: 5px 20px;
+      text-align: center;
+    }
+    .btn2 {
+      background-color: $white-color;
+      border-color: $bg-teal;
+      color: $bg-teal;
+      margin-left: 20px;
+    }
+  }
+  .section-details {
+    margin-top: 40px;
+    .section-label {
+      color: $dark-color;
+      margin-top: 31px;
+    }
+    .section-input-blackdropdowns {
+      input {
+        border-color: $bg-teal;
+        border-left: $white-color;
+        border-right: $white-color;
+        border-top: $white-color;
+      }
+      select {
+        background: transparent;
+        border-left: $white-color;
+        border-right: $white-color;
+        border-top: $white-color;
+        width: 70%;
+      }
+    }
+    .section-input-bluedropdowns {
+      select {
+        background: transparent;
+        border-color: $bg-teal;
+        border-left: $white-color;
+        border-right: $white-color;
+        border-top: $white-color;
+        color: $bg-teal;
+        width: 70%;
+      }
+    }
+  }
+  .heading {
+    font-weight: bold;
+  }
+  .secondary-details-section {
+    margin-top: 120px;
+  }
+}

@@ -1,0 +1,168 @@
+@import '../../app.component';
+
+.navbar-toggler {
+  background-color: $bg-default;
+  border-radius: 0;
+  margin-bottom: 15px;
+
+  i {
+    color: $white-color;
+    font-size: 12px;
+  }
+}
+
+.navbar {
+  @media #{$breakpoint-md} {
+    display: block;
+  }
+  @media #{$breakpoint-xs} {
+    display: block;
+  }
+}
+
+.sidebar-area {
+  @include trans-duration(500ms);
+  padding: 0;
+  position: relative;
+  z-index: 1;
+
+  @media #{$breakpoint-xs} {
+    @include trans-duration(500ms);
+    display: block;
+    height: 100%;
+    left: -350px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    position: fixed;
+    top: 0;
+    z-index: 4000;
+  }
+
+  &.bp-xs-on {
+    left: 0;
+  }
+
+  .profile-nav {
+    height: 40px;
+  }
+
+  .irene-nav {
+    ul {
+      padding: 0;
+    }
+
+    li {
+      line-height: 1;
+
+      a {
+        color: $nav-link;
+        display: block;
+        font-size: 14px;
+        font-weight: normal;
+        line-height: 1;
+        padding: 6%;
+        position: relative;
+        text-transform: capitalize;
+        z-index: 1;
+        @media #{$breakpoint-md} {
+          padding: 4%;
+        }
+
+        img {
+          padding-right: 4%;
+          @media #{$breakpoint-md} {
+            display: none;
+          }
+        }
+
+        &:hover {
+          color: $nav-link;
+          text-decoration: none;
+        }
+      }
+
+      &:hover {
+        a {
+          cursor: pointer;
+        }
+      }
+
+      &.active {
+        a {
+          &::after {
+            left: -75px;
+            @media #{$breakpoint-md} {
+              left: -50px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.candidate-profile {
+
+    li {
+      a {
+        &:hover {
+          background-color: $bg-default;
+          color: $nav-link;
+        }
+      }
+
+      &.active {
+        background-color: $bg-default;
+        border-left: 5px solid $bg-teal;
+        a {
+          padding-left: 10px;
+        }
+      }
+    }
+  }
+
+  &.hr-profile {
+
+    li {
+      a {
+        &:hover {
+          background-color: $bg-default;
+          color: $dark-color;
+        }
+      }
+
+      &.active {
+        background-color: $light-teal;
+        border-left: 5px solid $light-teal;
+
+        a {
+          color: $dark-color;
+
+          &:hover {
+            background-color: $light-teal;
+            color: $dark-color;
+          }
+        }
+      }
+    }
+  }
+
+  .callout-box {
+    background-color: $bg-teal;
+    color: $white-color;
+    cursor: pointer;
+    padding: 12% 0;
+    text-align: center;
+  }
+
+  .need-help-link {
+    border: solid 1px $border-color;
+    border-radius: 10px;
+    color: $white-color;
+    cursor: pointer;
+    font-size: 14px;
+    margin: 7% auto;
+    padding: 2px 0;
+    text-align: center;
+    width: 75%;
+  }
+}

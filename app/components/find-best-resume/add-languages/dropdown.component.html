@@ -1,0 +1,7 @@
+<div class='section-input-bluedropdowns'>
+    <select #newLanguage *ngIf='selectItems'>
+        <option *ngFor='let language of selectItems.LanguagesKnown'>
+            {{language.value}}
+        </option>
+    </select>
+</div>

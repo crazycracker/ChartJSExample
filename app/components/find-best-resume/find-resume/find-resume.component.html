@@ -1,0 +1,344 @@
+<div *ngIf='labels && selectItems' class='find-resume-container'>
+
+  <div class='section-search row'>
+    <div class='col-md-8'>
+      <span>{{labels.SearchfortheBestCandidateProfilesLabel}}</span>
+    </div>
+    <div class='btn-toolbar search-buttons'>
+      <button type="button" class='btn btn-primary btn-sm '>{{labels.searchLabel}}</button>
+      <button type="button" class='btn btn-default btn-sm btn2'>{{labels.refreshLabel}}</button>
+    </div>
+  </div>
+
+  <!-- primary details section -->
+  <h4>{{labels.primaryDetailsLabel}}</h4>
+  <div class='row skills-section'>
+    <div class='col-md-3'>
+      <div class='section-details'>
+        <div class='section-label heading'>
+          {{ labels.jobIdLabel}}
+        </div>
+      </div>
+    </div>
+    <div class='col-md-3'>
+      <div class='section-details'>
+        <div class='section-input job-id'>
+          <input type='text' placeholder='Job title you are hiring for'>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='row skills-section'>
+    <div class='col-md-3'>
+      <div class='section-details'>
+        <div class='section-label heading'>
+          {{ labels.skillsLabel}}
+        </div>
+        <div class='section-input-blackdropdowns'>
+          <select>
+            <option *ngFor='let weight of selectItems.weightage'>
+              {{weight.value}}
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class='col-md-3'>
+      <div class='section-details'>
+        <div class='section-label '>
+          {{ labels.hardSkillsLabel}}
+        </div>
+      </div>
+    </div>
+    <div class='col-md-6'>
+      <div class='section-details'>
+        <div class='section-input-blackdropdowns '>
+          <app-irene-add-skills></app-irene-add-skills>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='row skills-section'>
+    <div class='col-md-3'>
+    </div>
+    <div class='col-md-3'>
+      <div class='section-details'>
+        <div class='section-label'>
+          {{ labels.softSkillsLabel}}
+        </div>
+      </div>
+    </div>
+    <div class='col-md-6'>
+      <div class='section-details'>
+        <div class='section-input-blackdropdowns'>
+          <app-irene-add-skills></app-irene-add-skills>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='row industry-section'>
+    <div class='col-md-3'>
+      <div class='section-details'>
+        <div class='section-label heading'>
+          {{labels.industryLabel}}
+        </div>
+        <div class='section-input-blackdropdowns'>
+          <select>
+            <option *ngFor='let weight of selectItems.weightage'>
+              {{weight.value}}
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class='col-md-3'>
+      <div class='section-details'>
+        <div class='section-label '>
+          {{ labels.industryTypeLabel}}
+        </div>
+        <div class='section-input-bluedropdowns'>
+          <select>
+            <option *ngFor='let type of selectItems.IndustryType'>
+              {{type.value}}
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class='col-md-3'>
+      <div class='section-details'>
+        <div class='section-label'>
+          {{ labels.subTypeLabel}}
+        </div>
+        <div class='section-input-bluedropdowns'>
+          <select>
+            <option *ngFor='let type of selectItems.Subtype'>
+              {{type.value}}
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='row candidatedetails-section'>
+    <div class='col-md-3'>
+      <div class='section-details'>
+        <div class='section-label heading'>
+          {{ labels.candidateDetailsLabel}}
+        </div>
+        <div class='section-input-blackdropdowns'>
+          <select>
+            <option *ngFor='let weight of selectItems.weightage'>
+              {{weight.value}}
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class='col-md-3'>
+      <div class='section-details'>
+        <div class='section-label'>
+          {{ labels.qualificationLabel}}
+        </div>
+        <div class='section-input-bluedropdowns'>
+          <select>
+            <option *ngFor='let qualification of selectItems.Qualification'>
+              {{qualification.value}}
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class='col-md-3'>
+      <div class='section-details'>
+        <div class='section-label'>
+          {{ labels.lastExperienceInMedicalLabel}}
+        </div>
+        <div class='section-input-bluedropdowns'>
+          <select>
+            <option *ngFor='let experience of selectItems.LastExperienceInMedical'>
+              {{experience.value}}
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='row languages-section'>
+    <div class='col-md-3'>
+      <div class='section-details'>
+        <div class='section-label heading'>
+          {{ labels.languagesKnownLabel}}
+        </div>
+        <div class='section-input-blackdropdowns'>
+          <select>
+            <option *ngFor='let weight of selectItems.weightage'>
+              {{weight.value}}
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class='col-md-3'>
+      <div class='section-details'>
+        <div class='section-label'>
+          {{ labels.languageKnownLabel}}
+        </div>
+        <app-irene-add-languages></app-irene-add-languages>
+      </div>
+    </div>
+    <div class='col-md-3'>
+    </div>
+  </div>
+  <div class='row Educational-section'>
+    <div class='col-md-3'>
+      <div class='section-details'>
+        <div class='section-label heading'>
+          {{ labels.educationAndOrganizationDetailsLabel}}
+        </div>
+        <div class='section-input-blackdropdowns'>
+          <select>
+            <option *ngFor='let weight of selectItems.weightage'>
+              {{weight.value}}
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class='col-md-3'>
+      <div class='section-details'>
+        <div class='section-label'>
+          {{ labels.topAcademicInstitutionsLabel}}
+        </div>
+        <div class='section-input-bluedropdowns'>
+          <select>
+            <option *ngFor='let institution of selectItems.TopAcademicInstitutions'>
+              {{institution.value}}
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class='col-md-3'>
+      <div class='section-details'>
+        <div class='section-label'>
+          {{ labels.associatedWithTopOrganizationsLabel}} </div>
+        <div class='section-input-bluedropdowns '>
+          <select>
+            <option *ngFor='let organization of selectItems.organizations'>
+              {{organization.value}}
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- secondary Details Section -->
+  <div class='secondary-details-section'>
+    <h4>{{labels.secondaryDetailsLabel}}</h4>
+    <div class='row profile-section'>
+      <div class='col-md-3'>
+        <div class='section-details'>
+          <div class='section-label heading'>
+            {{ labels.numberOfProfilesRequiredLabel}}
+          </div>
+        </div>
+      </div>
+      <div class='col-md-3'>
+        <div class='section-details'>
+          <div class='section-input'>
+            <input type='text' placeholder='Type here' />
+          </div>
+        </div>
+      </div>
+      <div class='col-md-3'>
+      </div>
+    </div>
+    <div class='row profile-section'>
+      <div class='col-md-3'>
+        <div class='section-details'>
+          <div class='section-label heading'>
+            {{ labels.employmentTypeLabel}}
+          </div>
+          <div class='section-input-blackdropdowns'>
+            <select>
+              <option *ngFor='let weight of selectItems.weightage'>
+                {{weight.value}}
+              </option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class='col-md-3'>
+        <div class='section-details'>
+          <div class='section-input'>
+            <input type='text' placeholder='Type here'>
+          </div>
+        </div>
+      </div>
+      <div class='col-md-3'>
+      </div>
+    </div>
+    <div class='row location-section'>
+      <div class='col-md-3'>
+        <div class='section-details'>
+          <div class='section-label heading'>
+            {{ labels.primaryLocationsLabel}}
+          </div>
+          <div class='section-input-blackdropdowns'>
+            <select>
+              <option *ngFor='let weight of selectItems.weightage'>
+                {{weight.value}}
+              </option>
+            </select>
+          </div>
+        </div>
+      </div>
+      
+      <div class='col-md-6'>
+        <div class='section-details'>
+          <app-irene-add-locations></app-irene-add-locations>
+        </div>
+      </div>
+      <!-- <div class='col-md-3'>
+        <div class='section-details'>
+          <div class='section-input-bluedropdowns'>
+            <select>
+              <option *ngFor='let city of selectItems.city'>
+                {{city.value}}
+              </option>
+            </select>
+          </div>
+        </div>
+      </div> -->
+    </div>
+    <div class='row jobpriority-section'>
+      <div class='col-md-3'>
+        <div class='section-details'>
+          <div class='section-label heading'>
+            {{ labels.priorityOfTheJobLabel}}
+          </div>
+          <div class='section-input-blackdropdowns'>
+            <select>
+              <option *ngFor='let weight of selectItems.weightage'>
+                {{weight.value}}
+              </option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class='col-md-3'>
+        <div class='section-details'>
+          <div class='section-input-bluedropdowns'>
+            <select>
+              <option *ngFor='let job of selectItems.priorityofthejob'>
+                {{job.value}}
+              </option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

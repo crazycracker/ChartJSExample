@@ -1,1 +1,13 @@
-<app-find-best-resume></app-find-best-resume>
+<div class='irene-app' [ngClass]="isCandidateProfile ? 'candidate-profile' : 'hr-profile'">
+  <div class='sidebar-wrapper'>
+    <app-sidebar></app-sidebar>
+  </div>
+  <div class='main-header-container-wrapper'>
+    <div class='main-header-wrapper'>
+      <app-header></app-header>
+    </div>
+    <div class='main-container-wrapper'>
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

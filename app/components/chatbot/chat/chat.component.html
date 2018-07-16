@@ -1,0 +1,19 @@
+
+ <div>
+  <div class='chat-bubble' *ngFor='let messages of chatMessages' [class.chat-user-right]='messages.self'>
+    <div >{{messages.text}}</div>
+  </div>
+</div>
+<div class='chat-input-wrapper'>
+    <input class='chat-input-style'
+    type='text' placeholder='Type something here...' [(ngModel)]='replyMessage'
+     (keyup.enter)='replyReceived()'/>
+    <label class='icon-attach-left' for='fileToUpload'>
+      <img src='../../../../assets/icons/attach-icon@2x.png' />
+    </label>
+    <input type='File' name='fileToUpload' id='fileToUpload' accept='image/*'/>
+    <label class='icon-mic-right'>
+        <img src='../../../../assets/icons/speak-icon.png' />
+    </label>
+</div>
+

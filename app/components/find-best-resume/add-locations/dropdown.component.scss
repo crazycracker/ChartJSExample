@@ -1,0 +1,12 @@
+@import '../../../app.component';
+.section-input-bluedropdowns {
+    select {
+      background: transparent;
+      border-color: $bg-teal;
+      border-left: $white-color;
+      border-right: $white-color;
+      border-top: $white-color;
+      color: $bg-teal;
+      width: 70%;
+    }
+  }
