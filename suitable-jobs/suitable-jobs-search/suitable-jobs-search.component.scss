@@ -1,0 +1,128 @@
+@import '../../../app.component';
+.search-jobs {
+  background-image: url('../../../../assets/images/bg-image@2x.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  padding: 100px 0 50px;
+
+  .row {
+    margin: 0;
+  }
+}
+
+.heading {
+  font-family: 'Graphik-Medium';
+  font-size: 46px;
+  padding-top: 30px;
+  text-align: center;
+}
+
+.search-field {
+  background-color: $shadow-jobs;
+  border: 0;
+  color: $dropdown-text;
+  font-family: 'GraphikRegular';
+  font-size: 18px;
+  height: 35px;
+  margin-top: 30px;
+  padding: 0 5px;
+  position: relative;
+  width: 90%;
+}
+
+.search-icon {
+  background-color: transparent;
+  border: 0;
+  outline: none;
+  overflow: hidden;
+  padding-left: 4px;
+  }
+
+.choose-any {
+  margin-left: 10px;
+}
+
+.radio-btn-label {
+  font-family: 'GraphikSemibold';
+  font-size: 14px;
+}
+
+.advancesearch {
+  font-family: 'GraphikSemiboldItalic';
+  font-size: 14px;
+  padding-left: 155px;
+}
+
+.dropdowns-group {
+  margin: 10px 0 0;
+  padding-bottom: 32px;
+
+
+  .select-locations {
+    background-color: $shadow-jobs;
+    color: $dropdown-text;
+    font-family: 'GraphikRegular';
+    font-size: 16px;
+    height: 35px;
+    width: 80%;
+  }
+}
+
+.multiselect {
+  width: 80%;
+  display: inline-block;
+  flex-direction: column;
+}
+
+.selectbox {
+  position: relative;
+}
+
+.col-md-4{
+  display: block;
+}
+.selectbox select {
+  background: $shadow-jobs;
+  color: $dropdown-text;
+  font-family: 'GraphikRegular';
+  font-size: 16px;
+  height: 35px;
+  width: 100%;
+ }
+
+.overselect {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+ }
+
+#checkboxes{
+  background: $shadow-jobs;
+  position: fixed;
+  display: none;
+  width:auto;
+ }
+
+#checkboxes label {
+  color: $dropdown-text;
+  display: block;
+  font-family: 'GraphikRegular';
+  font-size: 16px;
+}
+
+
+#checkboxes ul{
+  list-style-type: none;
+  margin: 0%;
+  padding: 0px;
+ }
+
+ #checkboxes ul li{
+   width: 100%;
+ }
+.search-results {
+  margin-top: 20px;
+}
+

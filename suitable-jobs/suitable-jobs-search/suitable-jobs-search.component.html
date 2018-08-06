@@ -1,0 +1,66 @@
+<form #SuitableJobsForm='ngForm' (ngSubmit)='formDetails(SuitableJobsForm)'>
+  <div class='search-jobs' *ngIf='labels && selectItems'>
+    <div class='heading row'>
+      <div class='col-md-2'></div>
+      <div class='col-md-8'>
+        <h3>{{labels.titleLabel}}</h3>
+      </div>
+      <div class='col-md-2'></div>
+    </div>
+
+    <div class='input row'>
+      <div class='col-md-2'></div>
+      <div class='col-md-8'>
+        <input type='text' class='search-field' name='searchText' [(ngModel)]='formData.searchText' placeholder='Search for skills, designation'>
+        <button type='submit' class='search-icon'>
+          <img src='assets/icons/search-icon.png'>
+        </button>
+      </div>
+      <div class='col-md-2'></div>
+    </div>
+
+    <div class='radio-btns row'>
+      <div class='col-md-2'></div>
+      <div class='col-md-4'>
+        <input type='radio' value='radio1' class='choose-all' name='allKeyWords' [(ngModel)]='formData.allKeyWords'>
+        <label class='radio-btn-label'>{{labels.radioButton1Label}}</label>
+        <input type='radio' value='radio2' class='choose-any' name='anyKeyWords' [(ngModel)]='formData.anyKeyWords'>
+        <label class='radio-btn-label'>{{labels.radioButton2Label}}</label>
+      </div>
+      <div class='col-md-2' class='advancesearch'>
+        <label>{{labels.advancedsearchLabel}}</label>
+      </div>
+    </div>
+
+    <div class='dropdowns-group row'>
+      <div class='col-md-2'></div>
+      <div class='col-md-4'>
+        <div class='multiselect'>
+          <div class='selectbox' (click)='showCheckboxes()'>
+            <select>
+              <option id='locationDropdownValue'>{{labels.locationLabel}}</option>
+            </select>
+            <div class='overselect'></div>
+          </div>
+          <div id='checkboxes'>
+            <ul>
+              <li *ngFor='let locations of selectItems.location'>
+                <label for='{{locations.value}}'>
+                  <input type='checkbox' id='{{locations.value}}' (click)='updateLabel(this,locations.key,locations.value)'>{{locations.value}}
+                </label>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class='col-md-4'>
+        <select class='select-locations' [(ngModel)]='formData.experiences' name='experiences'>
+          <option *ngFor='let experiences of selectItems.experience'>
+            {{experiences.value}}
+          </option>
+        </select>
+      </div>
+      <div class='col-md-2'></div>
+    </div>
+  </div>
+</form>

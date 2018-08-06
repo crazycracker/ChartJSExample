@@ -1,0 +1,29 @@
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<div class='row result-section'>
+  <div class='col-md-4' *ngFor='let jobs of selectJobs; let i = index;'>
+    <div class="clearfix" *ngIf="i % 3 == 0"></div>
+    <div class='tile'>
+      <div class='job-tile-description'>
+        <div class='job-title'>{{jobs.Job_Posting_Title}}</div>
+        <div class='description-title'>{{labels.rolesLabel}}</div>
+        <div class='description'>
+          <div class='details'>{{jobs.Job_Description_Summary}}</div>
+        </div>
+        <div class='posted-on'>{{jobs.Post}}</div>
+      </div>
+
+      <div class='row button-group'>
+        <button class='applynow-btn'>
+          <a href='{{getLinks.href}}' target='_blank' class='navigate'>
+            <label>{{labels.applyNowLabel}}</label>
+          </a>
+        </button>
+       <button class='applynow-btn' (click)="toggleImage(i)">
+          <img src='assets/icons/screened-profiles-icon.png' id="{{i}}" class='favorite-icon'> {{labels.favouriteLabel}}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,98 @@
+@import '../../../app.component';
+
+.tile {
+  background-color: $bg-dark-blue;
+  color: $nav-link;
+  font-size: 12px;
+  margin-bottom: 15px;
+  padding-top: 17px;
+
+  .job-tile-description {
+    height: 300px;
+    margin-right: 10px;
+    overflow: auto;
+    padding: 0 15px;
+   
+
+    .description {
+      visibility: hidden;
+
+      .details {
+        visibility: visible;
+
+        &:hover {
+          visibility: visible;
+        }
+
+        &:focus {
+          visibility: visible;
+        }
+      }
+    }
+
+    &:hover {
+      overflow: auto;
+    }
+  }
+}
+
+.result-section {
+  margin: 0;
+}
+
+.job-title {
+  color: $white-color;
+  font-family: 'GraphikSemibold';
+  font-size: 20px;
+}
+
+.description-title {
+  font-family: 'GraphikRegular';
+  font-size: 14px;
+  padding-top: 24px;
+}
+
+.description {
+  font-family: 'GraphikRegular';
+  font-size: 14px;
+  padding-top: 24px;
+  width: 96%;
+}
+
+.posted-on {
+  font-family: 'GraphikRegularItalic';
+  font-size: 14px;
+  padding-top: 24px;
+}
+
+.button-group {
+  padding-top: 20px;
+
+
+  .applynow-btn {
+    background: rgba(22, 113, 199, .1);
+    border: 0;
+    color: $text-color;
+    font-family: 'GraphikRegular';
+    font-size: 14px;
+    height: 30px;
+    margin-left: 16px;
+    padding: 10px 0 30px;
+    width: 45%;
+   }
+
+
+    .applynow-btn:last-child {
+    margin-left: 3px;
+    }
+
+
+  .navigate {
+    color: $text-color;
+  }
+}
+
+.favorite-icon {
+  padding-right: 5px;
+  vertical-align: text-top;
+ }
