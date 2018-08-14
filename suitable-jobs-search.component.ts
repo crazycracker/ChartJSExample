@@ -1,7 +1,7 @@
-import { IKeyValue } from './../../find-best-resume/find-resume/find-resume.component';
-import { Component, OnInit } from '@angular/core';
-import { SuitableJobsService } from '../../../services/suitable-jobs-service/suitable-jobs.service';
-import 'rxjs';
+import { IKeyValue } from "./../../find-best-resume/find-resume/find-resume.component";
+import { Component, OnInit } from "@angular/core";
+import { SuitableJobsService } from "../../../services/suitable-jobs-service/suitable-jobs.service";
+import "rxjs";
 
 export interface ILocation {
   location: IKeyValue;
@@ -18,28 +18,27 @@ export interface ISuitableFormsData {
 }
 
 @Component({
-  selector: 'app-irene-suitable-jobs-search',
-  templateUrl: './suitable-jobs-search.component.html',
-  styleUrls: ['./suitable-jobs-search.component.scss']
+  selector: "app-irene-suitable-jobs-search",
+  templateUrl: "./suitable-jobs-search.component.html",
+  styleUrls: ["./suitable-jobs-search.component.scss"]
 })
-
 export class SuitableJobsSearchComponent implements OnInit {
   public data: any = [];
   public labels;
   public selectItems;
   public expanded = false;
-  public labelText = '';
+  public labelText = "";
   public formData: ISuitableFormsData = {
-    searchText: '',
+    searchText: "",
     locations: [],
-    experience: '',
+    experience: ""
   };
   /**
-  * @constructor injects the dependent services
-  * @description : The constructor initialises the class variables with the dependencies injected into the class
-  * @param {service} SuitableJobsService
- */
-  constructor(private service: SuitableJobsService) { }
+   * @constructor injects the dependent services
+   * @description : The constructor initialises the class variables with the dependencies injected into the class
+   * @param {service} SuitableJobsService
+   */
+  constructor(private service: SuitableJobsService) {}
 
   /**
    * @method ngOnInit
@@ -55,24 +54,26 @@ export class SuitableJobsSearchComponent implements OnInit {
     });
   }
   public showCheckboxes() {
-    const checkboxes = document.getElementsByClassName('checkboxes')[0] as HTMLElement;
+    const checkboxes = document.getElementsByClassName(
+      "checkboxes"
+    )[0] as HTMLElement;
     if (!this.expanded) {
-      checkboxes.style.display = 'block';
+      checkboxes.style.display = "block";
       this.expanded = true;
     } else {
-      checkboxes.style.display = 'none';
+      checkboxes.style.display = "none";
       this.expanded = false;
     }
   }
   public updateLabel(e, key, value) {
     const str = value;
     if (this.labelText.includes(str)) {
-      if (this.labelText.includes(str + ',')) {
-        this.labelText = this.labelText.replace(str + ',', '');
-      } else if (this.labelText.includes(',' + str)) {
-        this.labelText = this.labelText.replace(',' + str, '');
+      if (this.labelText.includes(str + ",")) {
+        this.labelText = this.labelText.replace(str + ",", "");
+      } else if (this.labelText.includes("," + str)) {
+        this.labelText = this.labelText.replace("," + str, "");
       } else {
-        this.labelText = this.labelText.replace(str, '');
+        this.labelText = this.labelText.replace(str, "");
       }
       const index = this.formData.locations.findIndex(function(item) {
         return item.location.key === key;
@@ -82,7 +83,7 @@ export class SuitableJobsSearchComponent implements OnInit {
       if (this.labelText.length === 0) {
         this.labelText = str;
       } else {
-        this.labelText += (',' + str);
+        this.labelText += "," + str;
       }
       this.formData.locations.push({
         location: {
@@ -92,19 +93,33 @@ export class SuitableJobsSearchComponent implements OnInit {
       });
     }
     console.log(this.formData.locations);
-    const option = document.getElementById('locationDropdownValue');
+    const option = document.getElementById("locationDropdownValue");
     if (this.labelText.length === 0) {
-      option.textContent = 'Select an option';
+      option.textContent = "Select an option";
     } else {
       option.textContent = this.labelText;
     }
   }
   public formDetails() {
     console.log(this.formData);
+    const searchStrings = this.formData.searchText.split(",");
+    const radioButtons = document.getElementById("radio1") as HTMLInputElement;
+    const radioButtons1 = document.getElementById("radio2") as HTMLInputElement;
+    let value: string = "";
+    if (radioButtons.checked) {
+      value = radioButtons.value;
+    }
+    if (radioButtons1.checked) {
+      value = radioButtons1.value;
+    }
+    if (value === "allKeyWords") {
+      console.log(searchStrings);
+    } else if (value == "anyKeyWords") {
+      let index = Math.floor(Math.random() * (searchStrings.length - 1));
+      console.log(searchStrings[index]);
+    }
     this.service
       .postFormDetails(this.formData)
       .subscribe(data => console.log(data));
   }
 }
-
-
