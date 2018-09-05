@@ -122,7 +122,7 @@ const mockResponse = [{
     "languages": "all",
     "volunteer_Community_Experience": "",
     "personalAttributes": "",
-    "certifications": "",
+    "certifications": "java",
     "firstName": "",
     "phoneNumber": "",
     "aspiration": "",
