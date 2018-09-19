@@ -1,0 +1,34 @@
+{
+    "candidateStatus": [
+        "Pre-Application",
+        "Review",
+        "Screen",
+        "Assessment",
+        "Reference Check",
+        "Interview",
+        "Background Check",
+        "Offer",
+        "Ready For Hire"
+    ],
+    "errorMessages": [
+        {
+            "text": "File size should not be more than 1MB."
+        },
+        {
+            "text": "File size can not be less than 2KB."
+        },
+        {
+            "text": "Attachment can be only in PDF or DOC format."
+        }
+    ],
+    "welcomeMessage": {
+        "MESSAGE0": "Hi There",
+        "MESSAGE1": "Great to know that you are interested in exploring job opportunities with Elixir!",
+        "MESSAGE2": "To make your recruitment journey seamless and personalized, our Recruiter Bot here will engage with you throughout, and make all the little things completely hassle-free."
+    },
+    "welcomeMessage1": {
+        "MESSAGE0": "Hi User!",
+        "MESSAGE1": "Great to know that you decided to continue your application process with Elixir!",
+        "MESSAGE2": "It is important that you upload your resume in order to avail all the features for a seamless and personalised recruitment journey. Our Recruiter Bot here will engage with you through out, and make all the little tasks completely hassle-free."
+    }
+}

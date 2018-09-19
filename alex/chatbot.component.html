@@ -1,0 +1,90 @@
+<div class='container-fluid irene-body-container'>
+  <div class='row'>
+    <div class='col-sm-11 col-md-11 col-sx-11 chat-page-width'>
+      <div [ngClass]="nochat && chatbotMessages ? 'noChatImage' : 'chatImage'">
+        <img id='chatbot-image' src='../../../../assets/images/chatbotBigFemale.png'>
+      </div>
+      <div>
+        <div *ngIf='nochat && chatbotMessages && !isProfileDisable' class='chatbot-wel-message'>
+          <h3>{{chatbotMessages.welcomeMessage.MESSAGE0}}!</h3>
+          <!-- {{userName}} -->
+          <p>{{chatbotMessages.welcomeMessage.MESSAGE1}}</p>
+          <p>{{chatbotMessages.welcomeMessage.MESSAGE2}}</p>
+        </div>
+        <div *ngIf='nochat && chatbotMessages && isProfileDisable' class='chatbot-wel-message'>
+          <h3>{{chatbotMessages.welcomeMessage1.MESSAGE0}}!</h3>
+          <!-- {{userName}} -->
+          <p>{{chatbotMessages.welcomeMessage1.MESSAGE1}}</p>
+          <p>{{chatbotMessages.welcomeMessage1.MESSAGE2}}</p>
+        </div>
+      </div>
+      <div #list [ngClass]="{'chat-container': !(nochat && chatbotMessages), 'active': nochat && chatbotMessages }"
+        [scrollTop]='list.scrollHeight'>
+        <div *ngFor='let messages of chatMessages'>
+          <div [ngClass]="{'chat-bubble-left': !messages.self, 'chat-bubble-right': messages.self }">
+            <div class='file-center-align' *ngIf='messages.attachment' [ngSwitch]='messages.attachment'>
+              <span class='attachment-pdf' *ngSwitchCase="'pdf'">
+                <img src='../../../../assets/icons/pdf-icon.png' />
+              </span>
+              <span *ngSwitchCase="'docx'">
+                <img src='../../../../assets/icons/documents.png' />
+              </span>
+              <span class='chat-text-attach-message'>{{messages.text}}</span>
+              <span class='chat-date'>{{messages.date}}</span>
+              <div class='chat-file-size'>{{messages.attachmentSize}}KB</div>
+            </div>
+            <div *ngIf='!messages.attachment'>
+              <div [innerHtml]='messages.text'> </div>
+            </div>
+          </div>
+          <div [ngClass]="{'chat-timestamp-left': !messages.self, 'chat-timestamp-right': messages.self }">
+            {{messages.timeStamp}}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngIf='chatbotMessages' class='col-sm-1 col-md-1 col-xs-1 chatbot-progressbar-width'>
+      <div class='candidate-status' *ngFor='let status of chatbotMessages.candidateStatus; let i = index;'>
+        <div *ngIf='status === candidateStatus' class='chatbot-status-label'>
+          <label class='chatbot-label-text'>{{status}}</label>
+          <span class='chatbot-side-black-dot'></span>
+        </div>
+        <span *ngIf='status !== candidateStatus' class='chatbot-side-dot' [ngClass]="{'blue': candidateStatusIndex < i, 'green': candidateStatusIndex > i }"></span>
+      </div>
+    </div>
+  </div>
+  <div class='chat-input-wrapper' *ngIf='chatbotMessages'>
+    <div class='chat-box'>
+      <label class='icon-attach-left' for='fileToUpload'>
+        <img src='../../../../assets/icons/attach-icon@2x.png' />
+      </label>
+      <input class='chat-input-style' type='text' placeholder='Type something here...' [(ngModel)]='userChat'
+        (keyup.enter)='chatConversation()' />
+      <label class='icon-mic-right'>
+        <img *ngIf='!(userChat || isAttachment)' src='../../../../assets/icons/speak-icon@2x.png' (mousedown)='startCapture()'
+          (mouseleave)='endCapture()' />
+        <img *ngIf='(isAttachment || userChat)' src='../../../../assets/icons/send-attachment-icon@2x.png' (click)='sendAttachment(); chatConversation();' />
+      </label>
+    </div>
+    <input id='attachment' type='File' name='fileToUpload' id='fileToUpload' onclick='value = null' (change)='uploadFileSet($event.target.files)' />
+    <span class='attach-error-message' *ngIf='errorFlagGreater'>
+      {{chatbotMessages.errorMessages[0].text}}
+    </span>
+    <span class='attach-error-message' *ngIf='errorFlag'>
+      {{chatbotMessages.errorMessages[1].text}}
+    </span>
+    <div *ngIf='isAttachment'>
+      <span class='attached-file-name'>
+        {{fileName}}
+      </span>
+      <span class='attached-file-remove' (click)='removeAttachment()' *ngIf='isAttachment'>X</span>
+    </div>
+  </div>
+</div>
+<app-modal #attachementError *ngIf='chatbotMessages'>
+  <div class='modal-header'>
+    <div class='modal-title'>Attachment</div>
+    <img (click)='closeModal()' src='../../../assets/icons/ion-android-close-ionicons@2x.png' alt='close' />
+  </div>
+  <div class='save-modal-body'>{{chatbotMessages.errorMessages[2].text}}</div>
+</app-modal>
