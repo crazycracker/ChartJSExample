@@ -1,0 +1,99 @@
+<div *ngIf='searchHistorydata' class='container search-history-page-padding'>
+  <div class='row search-history-pagination-style'>
+    <div class='col-md-12'>
+      <span class='search-history-pagination' [ngClass]='{disabled:pager.currentPage === 1}'>
+        <a (click)='setPage(pager.currentPage - 1)'>Previous</a>
+      </span>
+      <span class='search-history-pagination' *ngFor='let page of pager.pages' [ngClass]='{active:pager.currentPage === page}'>
+        <a (click)='setPage(page)'>{{page}}</a>
+      </span>
+      <span class='search-history-pagination' [ngClass]='{disabled:pager.currentPage === pager.totalPages}'>
+        <a (click)='setPage(pager.currentPage + 1)'>Next</a>
+      </span>
+    </div>
+  </div>
+  <div class='row search-history-header-margin'>
+    <div class='col-md-11 search-history-header'>
+      <div class='row'>
+        <div class='col-md-2'>{{searchHistoryLabel.TimeLabel}}</div>
+        <div class='col-md-1'>{{searchHistoryLabel.JobLabel}}</div>
+        <div class='col-md-4'>{{searchHistoryLabel.QualificationsLabel}}</div>
+        <div class='col-md-2'>{{searchHistoryLabel.ExperiencesLabel}}</div>
+        <div class='col-md-2'>{{searchHistoryLabel.SkillsLabel}}</div>
+        <div class='col-md-1'>{{searchHistoryLabel.LocationLabel}}</div>
+      </div>
+    </div>
+    <div class='col-md-1'></div>
+  </div>
+  <div *ngFor='let item of pagedItems; let i= index' class='search-history-data-margin'>
+    <div class='row'>
+      <div class='col-md-11 search-history-data-row'>
+        <div class='row'>
+          <div class='col-md-2'>{{item.created_date}}</div>
+          <div class='col-md-1'>{{item.jobid}}</div>
+          <div class='col-md-4'>
+            <div>{{item.qualifications}}</div>
+          </div>
+          <div class='col-md-2'>{{item.lastExperienceInMedical}}</div>
+          <div class='col-md-2'>
+            <div *ngFor='let skill of item.hardskills'>{{skill.value}}</div>
+          </div>
+          <div class='col-md-1'>
+            <!-- <div *ngFor='let city of item.city'> {{ city }}</div> -->
+            {{item.city}}
+          </div>
+        </div>
+      </div>
+      <div class='col-md-1'>
+        <div class='row'>
+          <div class='col-md-8 collapse-toggle-style' (click)='current=i'>
+            <span *ngIf='i != current'>
+              <img src='../../../../assets/icons/path-6@2x.png' />
+            </span>
+            <span *ngIf='i == current'>
+              <img src='../../../../assets/icons/path-6-copy-2@2x.png' />
+            </span>
+          </div>
+          <div class='col-md-2'></div>
+        </div>
+      </div>
+    </div>
+    <div class='row search-history-collapse' [@expandCollapse]='current === i ? "expanded" : "collapsed"'
+      [class.collapse]='current != i'>
+      <div class='col-md-12'>
+        <div class='row'>
+          <div class='col-md-6'>
+            <div class='label'>{{searchHistoryLabel.IndustryLabel}}</div>
+            <div class='data'>{{item.industryType}}</div>
+          </div>
+          <div class='col-md-6'>
+            <div class='label'>{{searchHistoryLabel.EmpTypeLabel}}</div>
+            <div class='data'>{{item.employmentType}}</div>
+          </div>
+        </div>
+        <div class='row search-history-data-padding'>
+          <div class='col-md-6'>
+            <div class='label'>{{searchHistoryLabel.LanguageKnownLabel}}</div>
+            <div class='data'>
+              <span class='multiline-data'>{{item.Language1}}</span>
+              <span class='multiline-data'>{{item.Language2}}</span>
+            </div>
+          </div>
+          <div class='col-md-6'>
+            <div class='label'>{{searchHistoryLabel.PriorityLabel}}</div>
+            <div class='data'>{{item.priorityofthejobWeightage}}</div>
+          </div>
+        </div>
+        <div class='row search-history-data-padding'>
+          <div class='col-md-6'>
+            <div class='label'>{{searchHistoryLabel.EduDetailsLabel}}</div>
+            <div class='data'>
+              <span class='multiline-data'>{{item.EducationalDetails1}}</span>
+              <span class='multiline-data'>{{item.EducationalDetails2}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
