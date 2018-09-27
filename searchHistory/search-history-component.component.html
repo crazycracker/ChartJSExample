@@ -36,11 +36,19 @@
           </div>
           <div class='col-md-2'>{{item.lastExperienceInMedical}}</div>
           <div class='col-md-2'>
-            <div *ngFor='let skill of item.hardskills'>{{skill.value}}</div>
+            <div *ngFor='let hardskill of item.hardskills'>
+              <div *ngIf=' i < 1'>{{hardskill.value}}</div>
+            </div>
+            <div *ngFor='let softskill of item.softskills; let i = index'>
+              <div *ngIf=' i < 1'>{{softskill.value}}</div>
+            </div>
           </div>
           <div class='col-md-1'>
-            <!-- <div *ngFor='let city of item.city'> {{ city }}</div> -->
-            {{item.city}}
+            <div *ngFor='let city of item.city; let i = index'>
+              <div *ngIf=' i < 1'>{{city}}</div>
+            </div>
+            <!-- <div *ngFor='let state of item.state; let i = index'>
+                <div *ngIf=' i < 1'>{{state}}</div> -->
           </div>
         </div>
       </div>
@@ -75,8 +83,7 @@
           <div class='col-md-6'>
             <div class='label'>{{searchHistoryLabel.LanguageKnownLabel}}</div>
             <div class='data'>
-              <span class='multiline-data'>{{item.Language1}}</span>
-              <span class='multiline-data'>{{item.Language2}}</span>
+              <span class='multiline-data' *ngFor='let language of item.languages_known'>{{language}}</span>
             </div>
           </div>
           <div class='col-md-6'>
@@ -87,9 +94,12 @@
         <div class='row search-history-data-padding'>
           <div class='col-md-6'>
             <div class='label'>{{searchHistoryLabel.EduDetailsLabel}}</div>
-            <div class='data'>
-              <span class='multiline-data'>{{item.EducationalDetails1}}</span>
-              <span class='multiline-data'>{{item.EducationalDetails2}}</span>
+            <div class='data' *ngFor='let educational_details of item.educational_details'>
+              <span class='multiline-data'>{{educational_details.fromMonthEducation}}</span>
+              <span class="multiline-data">{{educational_details.fromYearEducation}}</span>
+              <span class="multiline-data">{{educational_details.instituteEducation}}</span>
+              <span class="multiline-data">{{educational_details.toMonthEducation}}</span>
+              <span class="multiline-data">{{educational_details.toYearEducation}}</span>
             </div>
           </div>
         </div>
